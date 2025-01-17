@@ -6,13 +6,14 @@
   "scripts": {
     "start": "pm2 start ./build/src/app.js -i 5 --attach --watch | pino-pretty -c",
     "stop": "pm2 stop all",
+    "delete": "pm2 delete all",
     "dev": "nodemon -r tsconfig-paths/register src/app.ts | pino-pretty -c",
-    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && ts-node tools/copyAssets.ts",
-    "test": "jest --coverage=true -w=1 --forceExit --detectOpenHandles --watchAll=false",
     "lint:check": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
-    "prettier:check": "prettier --check 'src/**/*.{ts, json}'",
-    "prettier:fix": "prettier --write 'src/**/*.{ts, json}'"
+    "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
+    "prettier:fix": "prettier --write 'src/**/*.{ts,json}'",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "test": "jest --coverage=true -w=1 --forceExit --detectOpenHandles --watchAll=false"
   },
   "keywords": [],
   "author": "",
@@ -62,6 +63,7 @@
     "ts-alias": "^0.0.7",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.8",
     "tsconfig-paths": "^4.2.0"
   }
 }
