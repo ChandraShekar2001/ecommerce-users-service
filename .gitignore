@@ -147,4 +147,3 @@ Dockerfile
 Dockerfile.dev
 .dockerignore
 .npmrc
-Jenkinsfile
